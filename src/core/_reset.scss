@@ -1,0 +1,53 @@
+/* =========================================================
+	SliceCSS — Core Reset
+========================================================= */
+
+/* 1. Box model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default spacing */
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* 3. Media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 4. Tables */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 5. Lists */
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* 6. Prevent text overflow */
+body {
+  overflow-wrap: break-word;
+}
+
+/* 7. Anchor reset (minimal) */
+a {
+  text-decoration: none;
+  color: inherit;
+}
