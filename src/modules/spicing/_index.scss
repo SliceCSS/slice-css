@@ -1,0 +1,101 @@
+@use '../../abstracts/tokens' as *;
+
+/*
+=========================================================
+  Spacing module (modern, minimal, logical)
+=========================================================
+*/
+
+/* Container */
+.container {
+  max-inline-size: var(--container, 72rem);
+  margin-inline: auto;
+  padding-inline: var(--space-3);
+}
+
+/* Padding utilities */
+.p-0 { padding: var(--space-0); }
+.p-1 { padding: var(--space-1); }
+.p-2 { padding: var(--space-2); }
+.p-3 { padding: var(--space-3); }
+.p-4 { padding: var(--space-4); }
+.p-5 { padding: var(--space-5); }
+.p-6 { padding: var(--space-6); }
+
+/* Padding X and Y */
+.px-0 { padding-inline: var(--space-0); }
+.px-1 { padding-inline: var(--space-1); }
+.px-2 { padding-inline: var(--space-2); }
+.px-3 { padding-inline: var(--space-3); }
+.px-4 { padding-inline: var(--space-4); }
+.px-5 { padding-inline: var(--space-5); }
+.px-6 { padding-inline: var(--space-6); }
+
+.py-0 { padding-block: var(--space-0); }
+.py-1 { padding-block: var(--space-1); }
+.py-2 { padding-block: var(--space-2); }
+.py-3 { padding-block: var(--space-3); }
+.py-4 { padding-block: var(--space-4); }
+.py-5 { padding-block: var(--space-5); }
+.py-6 { padding-block: var(--space-6); }
+
+/* Margin utilities */
+.m-0 { margin: var(--space-0); }
+.m-1 { margin: var(--space-1); }
+.m-2 { margin: var(--space-2); }
+.m-3 { margin: var(--space-3); }
+.m-4 { margin: var(--space-4); }
+.m-5 { margin: var(--space-5); }
+.m-6 { margin: var(--space-6); }
+
+/* Margin X and Y */
+.mx-auto { margin-inline: auto; }
+
+.mx-1 { margin-inline: var(--space-1); }
+.mx-2 { margin-inline: var(--space-2); }
+.mx-3 { margin-inline: var(--space-3); }
+.mx-4 { margin-inline: var(--space-4); }
+.mx-5 { margin-inline: var(--space-5); }
+.mx-6 { margin-inline: var(--space-6); }
+
+.my-1 { margin-block: var(--space-1); }
+.my-2 { margin-block: var(--space-2); }
+.my-3 { margin-block: var(--space-3); }
+.my-4 { margin-block: var(--space-4); }
+.my-5 { margin-block: var(--space-5); }
+.my-6 { margin-block: var(--space-6); }
+
+/* Gap utilities */
+.g-0 { gap: var(--space-0); }
+.g-1 { gap: var(--space-1); }
+.g-2 { gap: var(--space-2); }
+.g-3 { gap: var(--space-3); }
+.g-4 { gap: var(--space-4); }
+.g-5 { gap: var(--space-5); }
+.g-6 { gap: var(--space-6); }
+
+/* Flow utilities */
+.flow {
+  --flow-space: var(--space-3);
+
+  > * + * {
+    margin-block-start: var(--flow-space);
+  }
+}
+
+/* Stack and Inline utilities */
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--stack-space, var(--space-3));
+}
+.inline {
+  display: flex;
+  gap: var(--inline-space, var(--space-2));
+}
+
+/* Width utilities */
+.w-full { inline-size: 100%; }
+.w-fit  { inline-size: fit-content; }
+.w-max  { inline-size: max-content; }
+
