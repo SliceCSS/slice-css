@@ -1,0 +1,82 @@
+@use "config" as *;
+
+/*
+==========================================
+  Design tokens
+===========================================
+*/
+
+// Container
+$container: 72rem !default;
+
+// Colors (defaults)
+$color-text-default: #000 !default;
+$color-bg-default: #fff !default;
+
+// Typography
+$font-family-base: system-ui, -apple-system, BlinkMacSystemFont, sans-serif !default;
+$font-size-base: 16px !default;
+$line-height-base: 1.5 !default;
+
+// Grid
+$grid-columns: 12 !default;
+$grid-gap: 1rem !default;
+
+// Layout
+$layout-container-max-width: 1200px !default;
+$layout-container-padding-inline: 1rem !default;
+
+// Media: prefers-reduced-motion
+$media-reduced-motion-enable: true !default;
+$media-reduced-motion-animation-duration: 0.01ms !default;
+$media-reduced-motion-animation-iteration-count: 1 !default;
+$media-reduced-motion-transition-duration: 0.01ms !default;
+$media-reduced-motion-scroll-behavior: auto !default;
+
+// Tokens maps
+$tokens-colors: (
+  text: $color-text-default,
+  bg: $color-bg-default,
+);
+
+// Spacing
+$tokens-spacing: (
+  0: 0,
+  1: 0.25rem,
+  2: 0.5rem,
+  3: 1rem,
+  4: 1.5rem,
+  5: 2rem,
+  6: 3rem,
+);
+
+/*
+------------------------------------------
+  CSS variables output
+-------------------------------------------
+*/
+@if $css-vars-enable {
+  #{$css-vars-scope} {
+    /* colors */
+    @each $name, $value in $colors {
+      --color-#{$name}: #{$value};
+    }
+
+    /* spacing */
+    @each $name, $value in $spacing {
+      --space-#{$name}: #{$value};
+    }
+
+    /* Container */
+    --container: #{$container};
+
+    /* typography */
+    --font-family-base: #{$font-family-base};
+    --font-size-base: #{$font-size-base};
+    --line-height-base: #{$line-height-base};
+
+    /* Grid */
+    --grid-columns: 12;
+    --grid-gap: 1rem;
+  }
+}
