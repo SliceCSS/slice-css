@@ -1,0 +1,36 @@
+@use "config" as *;
+@use "tokens" as *;
+
+/*
+------------------------------------------
+  Token getter
+-------------------------------------------
+*/
+@function token($group, $name) {
+  @if $css-vars-enable {
+    @return var(--#{$group}-#{$name});
+  }
+
+  @if $group == color {
+    @return map-get($tokens-colors, $name);
+  }
+
+  @if $group == space {
+    @return map-get($tokens-spacing, $name);
+  }
+
+  @error "Unknown token: #{$group}-#{$name}";
+}
+
+/*
+------------------------------------------
+  Reduced motion helper
+-------------------------------------------
+*/
+@mixin reduced-motion {
+  @if $media-reduced-motion-enable {
+    @media (prefers-reduced-motion: reduce) {
+      @content;
+    }
+  }
+}
